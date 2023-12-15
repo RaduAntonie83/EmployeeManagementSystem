@@ -20,7 +20,7 @@ public class EmployeeBean {
     public List<EmployeeDto> copyEmployeesToDto(List<Employee> employees) {
         List<EmployeeDto> list = new ArrayList<>();
         for (Employee i : employees) {
-            list.add(new EmployeeDto(i.getId(), i.getName(), i.getGender(), i.getDateOfBirth(), i.getAddress(), i.getSalary(), i.getReligion(), i.getPassword()));
+            list.add(new EmployeeDto(i.getId(), i.getName(), i.getGender(), i.getDateOfBirth(), i.getAddress(), i.getSalary(), i.getReligion(), i.getPassword(), i.getWorkingHours()));
         }
         return list;
     }

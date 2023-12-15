@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class EmployeeDto {
 
-    public EmployeeDto(Long id, String name, String gender, Date dateOfBirth, String address, Integer salary, String religion, String password) {
+    public EmployeeDto(Long id, String name, String gender, Date dateOfBirth, String address, Integer salary, String religion, String password, int workingHours) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -15,6 +15,7 @@ public class EmployeeDto {
         this.salary = salary;
         this.religion = religion;
         this.password = password;
+        this.workingHours=workingHours;
     }
 
     private Long id;
@@ -64,4 +65,7 @@ public class EmployeeDto {
     public String getPassword() {
         return password;
     }
+
+    private  int workingHours;
+    public  int getWorkingHours(){return workingHours;}
 }
