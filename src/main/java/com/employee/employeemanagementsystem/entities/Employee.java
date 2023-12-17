@@ -1,9 +1,6 @@
 package com.employee.employeemanagementsystem.entities;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -97,4 +94,31 @@ public class Employee {
     public void setPassword(String password) {
         this.password = password;
     }
+    private int workingTime;
+
+    public int getWorkingTime() {
+        return workingTime;
+    }
+
+    public void setWorkingTime(int workingTime) {
+        this.workingTime = workingTime;
+    }
+    public enum TaxClass {
+        CLASS_A,
+        CLASS_B,
+        CLASS_C
+
+    }
+
+    @Enumerated(EnumType.STRING)
+    private TaxClass taxClass;
+
+    public TaxClass getTaxClass() {
+        return taxClass;
+    }
+
+    public void setTaxClass(TaxClass taxClass) {
+        this.taxClass = taxClass;
+    }
+
 }
