@@ -97,4 +97,11 @@ public class Employee {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Basic
+    private int workingHours;
+
+    public int getWorkingHours(){return workingHours;};
+
+    public void setWorkingHours(int workingHours){this.workingHours=workingHours;};
 }
