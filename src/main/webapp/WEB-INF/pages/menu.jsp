@@ -26,6 +26,8 @@
         <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
         <li><a href="${pageContext.request.contextPath}/about.jsp" class="nav-link px-2 ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
 ("/")) eq '/about.jsp' ? ' text-white' : 'text-secondary'}">About</a></li>
+        <li><a href="${pageContext.request.contextPath}/addEmployee.jsp" class="nav-link px-2 ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
+("/")) eq '/addEmployee.jsp' ? ' text-white' : 'text-secondary'}">Add Employee</a></li>
       </ul>
 
       <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
