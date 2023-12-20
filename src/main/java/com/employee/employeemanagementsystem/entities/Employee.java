@@ -94,6 +94,7 @@ public class Employee {
     public void setPassword(String password) {
         this.password = password;
     }
+
     private int workingTime;
 
     public int getWorkingTime() {
@@ -120,5 +121,13 @@ public class Employee {
     public void setTaxClass(TaxClass taxClass) {
         this.taxClass = taxClass;
     }
+
+
+    @Basic
+    private int workingHours;
+
+    public int getWorkingHours(){return workingHours;};
+
+    public void setWorkingHours(int workingHours){this.workingHours=workingHours;};
 
 }
