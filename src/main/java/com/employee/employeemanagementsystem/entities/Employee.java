@@ -94,6 +94,8 @@ public class Employee {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Basic
     private int workingTime;
 
     public int getWorkingTime() {
@@ -103,15 +105,18 @@ public class Employee {
     public void setWorkingTime(int workingTime) {
         this.workingTime = workingTime;
     }
+
+
     public enum TaxClass {
         CLASS_A,
         CLASS_B,
         CLASS_C
 
     }
-
+    @Basic
     @Enumerated(EnumType.STRING)
     private TaxClass taxClass;
+
 
     public TaxClass getTaxClass() {
         return taxClass;
