@@ -99,7 +99,7 @@
 
             <div class="row text-center">
                 <div class="col-md-6 mb-3 mx-auto">
-                    <button type="button" class="btn btn-primary">Add Employee + <i class="fas fa-plus"></i></button>
+                    <button type="button" class="btn btn-primary">+ Add<i class="fas fa-plus"></i></button>
                 </div>
             </div>
 
