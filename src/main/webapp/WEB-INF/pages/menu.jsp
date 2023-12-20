@@ -5,6 +5,7 @@
   Time: 5:46 PM
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -26,7 +27,7 @@
         <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
         <li><a href="${pageContext.request.contextPath}/about.jsp" class="nav-link px-2 ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
 ("/")) eq '/about.jsp' ? ' text-white' : 'text-secondary'}">About</a></li>
-        <li><a href="${pageContext.request.contextPath}/addEmployee.jsp" class="nav-link px-2 ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
+        <li><a href="${pageContext.request.contextPath}/AddEmployee" class="nav-link px-2 ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
 ("/")) eq '/addEmployee.jsp' ? ' text-white' : 'text-secondary'}">Add Employee</a></li>
       </ul>
 
@@ -43,3 +44,24 @@
 </header>
 </body>
 </html>
+
+<main>
+    <link href="carousel.css" rel="stylesheet">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/Login">Login</a>
+                    </li>
+                </ul>
+                <a class="navbar-brand mx-auto" href="">Employee Management</a>
+                <button class="navbar-toggler vh-10" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+</main>
+
