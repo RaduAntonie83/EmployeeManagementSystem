@@ -16,10 +16,6 @@
                     </li>
                 </ul>
                 <a class="navbar-brand mx-auto" href="">Employee Management</a>
-                <button class="navbar-toggler vh-10" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
             </div>
         </nav>
     </header>
