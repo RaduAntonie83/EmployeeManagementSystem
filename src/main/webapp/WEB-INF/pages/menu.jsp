@@ -5,6 +5,8 @@
   Time: 5:46 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <main>
     <link href="carousel.css" rel="stylesheet">
     <header>
@@ -12,7 +14,17 @@
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/Login">Login</a>
+                        <c:choose>
+                            <c:when test="${not empty sessionScope.username}">
+                                <span style="color: white;">Welcome, ${sessionScope.username}!</span>
+                            </c:when>
+                            <c:otherwise>
+                                <span style="color: white;">Not logged in</span>
+                            </c:otherwise>
+                        </c:choose>
+
+
+
                     </li>
                 </ul>
                 <a class="navbar-brand mx-auto" href="">Employee Management</a>
