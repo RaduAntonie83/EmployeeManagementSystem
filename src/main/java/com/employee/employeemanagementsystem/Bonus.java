@@ -15,7 +15,7 @@ public class Bonus {
     private BonusType bonusType;
     private int amount;
 
-    public Bonus(BonusType bonusType) {
+    public Bonus(BonusType bonusType, int amount) {
         this.bonusType = bonusType;
         this.amount = amount;
     }
