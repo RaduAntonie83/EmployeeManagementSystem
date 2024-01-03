@@ -1,6 +1,7 @@
 package com.employee.employeemanagementsystem.ejb;
 
 import com.employee.employeemanagementsystem.entities.Employee;
+import com.employee.employeemanagementsystem.entities.Lecturer;
 import common.EmployeeDto;
 import jakarta.ejb.EJBException;
 import jakarta.ejb.Stateless;
@@ -39,7 +40,7 @@ public class EmployeeBean {
     public void createEmployee(Long id, String name, String gender, Date dateOfBirth, String address, Integer salary, String religion, String password) {
         LOG.info("create Employee");
 
-        Employee employee = new Employee();
+        Employee employee = new Lecturer();
         employee.setId(id);
         employee.setName(name);
         employee.setGender(gender);
