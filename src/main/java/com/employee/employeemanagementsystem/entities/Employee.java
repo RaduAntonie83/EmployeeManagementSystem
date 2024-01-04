@@ -99,9 +99,13 @@ public class Employee {
     }
 
     @Basic
-    private int workingHours;
+    private Integer workingHours;
 
-    public int getWorkingHours(){return workingHours;};
+    public Integer getWorkingHours() {
+        return workingHours;
+    }
 
-    public void setWorkingHours(int workingHours){this.workingHours=workingHours;};
+    public void setWorkingHours(Integer workingHours) {
+        this.workingHours = workingHours;
+    }
 }
