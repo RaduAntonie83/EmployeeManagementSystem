@@ -102,7 +102,7 @@
                     <button type="button" class="btn btn-primary">+ Add<i class="fas fa-plus"></i></button>
                 </div>
             </div>
-
+            <img src="https://www.pockethrms.com/wp-content/uploads/2022/01/Happy-Workforce.jpg" alt="welcome" style="margin-left: 500px; margin-top: -550px; width:800px; border-radius: 10px;">
         </form>
     </div>
 </t:pageTemplate>
