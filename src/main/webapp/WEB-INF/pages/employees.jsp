@@ -2,7 +2,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:pageTemplate pageTitle="Employees">
-<div style="background: white; border-radius: 20px; padding: 20px;">
+<div class="background-white-rounded">
     <div>
         <div class="row">
             <div class="col">
@@ -40,10 +40,10 @@
         </div>
     </div>
     <div class = "container-fluid text-justify">
-        <div class="row border-bottom border-top" style="background: lightgray">
+        <div class="row border-bottom border-top background-light-gray">
             <div class="col">
                 <div class="form-check">
-                    <input class="form-check-input" style="width: 1.5em; height: 1.5em;" type="checkbox" value="" id="flexCheckIndeterminate">
+                    <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckIndeterminate">
                     <label class="form-check-label" for="flexCheckIndeterminate">
                     </label>
                 </div>
@@ -94,7 +94,7 @@
         <div class="row border-bottom">
             <div class="col">
                 <div class="form-check">
-                    <input class="form-check-input" style="width: 1.5em; height: 1.5em;" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                     </label>
                 </div>
@@ -124,7 +124,7 @@
         <div class="row border-bottom">
             <div class="col">
                 <div class="form-check">
-                    <input class="form-check-input" style="width: 1.5em; height: 1.5em;" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                     </label>
                 </div>
