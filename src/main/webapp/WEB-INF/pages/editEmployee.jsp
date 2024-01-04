@@ -102,7 +102,7 @@
                     <button type="button" class="btn btn-primary">+ Add<i class="fas fa-plus"></i></button>
                 </div>
             </div>
-
+            <img src="https://img.freepik.com/premium-vector/recruitment-concept-idea-employment-human_277904-2607.jpg" alt="welcome" style="margin-left: 600px; margin-top: -550px; width:600px; border-radius: 10px;">
         </form>
     </div>
 </t:pageTemplate>
