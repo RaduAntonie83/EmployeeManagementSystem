@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <main>
     <link href="carousel.css" rel="stylesheet">
     <header>
