@@ -10,9 +10,12 @@
 <head>
     <title>Footer</title>
 </head>
-<body>
-<footer class="container">
-    <p class="align-text-bottom">&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
+
+<body style="display: flex; flex-direction: column; min-height: 100vh; margin: 0;">
+<div style="flex: 1; display: flex; justify-content: center; align-items: flex-end;">
+    <footer style="text-align: center; padding: 10px; color: aliceblue;">
+        <p>&copy; Employee Management System &middot;</p>
+    </footer>
+</div>
 </body>
 </html>
