@@ -22,9 +22,6 @@
                                 <span style="color: white;">Not logged in</span>
                             </c:otherwise>
                         </c:choose>
-
-
-
                     </li>
                 </ul>
                 <a class="navbar-brand mx-auto" href="">Employee Management</a>
@@ -36,3 +33,4 @@
         </nav>
     </header>
 </main>
+
