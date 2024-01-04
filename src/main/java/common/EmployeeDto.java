@@ -1,12 +1,10 @@
 package common;
 
-import jakarta.persistence.Basic;
-
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class EmployeeDto {
 
-    public EmployeeDto(Long id, String name, String gender, Date dateOfBirth, String address, Integer salary, String religion, String password, int workingHours) {
+    public EmployeeDto(Long id, String name, String gender, LocalDateTime dateOfBirth, String address, Integer salary, String religion, String password, int workingHours) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -36,9 +34,9 @@ public class EmployeeDto {
         return gender;
     }
 
-    private Date dateOfBirth;
+    private LocalDateTime dateOfBirth;
 
-    public Date getDateOfBirth() {
+    public LocalDateTime getDateOfBirth() {
         return dateOfBirth;
     }
 

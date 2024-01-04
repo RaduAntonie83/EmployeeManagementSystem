@@ -1,17 +1,16 @@
 package com.employee.employeemanagementsystem.entities;
 
 import jakarta.persistence.Basic;
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 
-import java.util.Date;
-
-@Entity
+import java.time.LocalDateTime;
+@MappedSuperclass
 public abstract class Employee {
     @Id
     @GeneratedValue
-    private Long id;
+    protected Long id;
 
     public void setId(Long id) {
         this.id = id;
@@ -22,7 +21,7 @@ public abstract class Employee {
     }
 
     @Basic
-    private String name;
+    protected String name;
 
     public String getName() {
         return name;
@@ -33,7 +32,7 @@ public abstract class Employee {
     }
 
     @Basic
-    private String gender;
+    protected String gender;
 
     public String getGender() {
         return gender;
@@ -44,18 +43,18 @@ public abstract class Employee {
     }
 
     @Basic
-    private Date dateOfBirth;
+    protected LocalDateTime dateOfBirth;
 
-    public Date getDateOfBirth() {
+    public LocalDateTime getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDateTime dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
     @Basic
-    private String address;
+    protected String address;
 
     public String getAddress() {
         return address;
@@ -66,7 +65,7 @@ public abstract class Employee {
     }
 
     @Basic
-    private Integer salary;
+    protected Integer salary;
 
     public Integer getSalary() {
         return salary;
@@ -77,7 +76,7 @@ public abstract class Employee {
     }
 
     @Basic
-    private String religion;
+    protected String religion;
 
     public String getReligion() {
         return religion;
@@ -88,7 +87,7 @@ public abstract class Employee {
     }
 
     @Basic
-    private String password;
+    protected String password;
 
     public String getPassword() {
         return password;
@@ -99,7 +98,7 @@ public abstract class Employee {
     }
 
     @Basic
-    private Integer workingHours;
+    protected Integer workingHours;
 
     public Integer getWorkingHours() {
         return workingHours;

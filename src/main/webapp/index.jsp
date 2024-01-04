@@ -13,7 +13,7 @@
     <img src="https://www.pockethrms.com/wp-content/uploads/2022/01/Happy-Workforce.jpg" alt="welcome" class="img-fluid center d-block mx-auto mt-3" style="border-radius: 10px;border-radius: 10px;">
     </div>
     <div class="col-md-6  d-flex align-items-center justify-content-center">
-    <button type="button"  href="${pageContext.request.contextPath}/Login" class="btn btn-light  mt-3 ml-2" style="font-size: 1.5em; margin-left: 350px">Login  → </button>
+    <a type="button" href="${pageContext.request.contextPath}/Login" class="btn btn-light  mt-3 ml-2" style="font-size: 1.5em; margin-left: 350px">Login  → </a>
     </div>
     </div>
 </t:pageTemplate>
