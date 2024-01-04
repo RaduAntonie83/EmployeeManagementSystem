@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Employee {
+public abstract class Employee {
     @Id
     @GeneratedValue
     private Long id;
