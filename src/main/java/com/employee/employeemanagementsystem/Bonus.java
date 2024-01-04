@@ -8,7 +8,7 @@ public class Bonus {
         CHRISTMAS,
 
         NUMBER_OF_SHARES,
-        VACANTION,
+        VACATION,
         EXTRA;
 
     }
@@ -47,7 +47,7 @@ public class Bonus {
             case NUMBER_OF_SHARES:
                 amount = 1000;
                 break;
-            case VACANTION:
+            case VACATION:
                 amount = 1000;
                 break;
             case EXTRA:
