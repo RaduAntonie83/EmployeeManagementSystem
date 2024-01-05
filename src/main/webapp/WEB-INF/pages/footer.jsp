@@ -11,11 +11,11 @@
     <title>Footer</title>
 </head>
 
-<body style="display: flex; flex-direction: column; min-height: 100vh; margin: 0;">
-<div style="flex: 1; display: flex; justify-content: center; align-items: flex-end;">
-    <footer style="text-align: center; padding: 10px; color: aliceblue;">
-        <p>&copy; Employee Management System &middot;</p>
-    </footer>
-</div>
+<body class="display-flex no-margin flex-column min-height-100vh justify-content-center">
+    <div class="display-flex flex-1 flex-end justify-content-center">
+        <footer class="text-center text-white text-center padding-10px">
+            <p>&copy; Employee Management System &middot;</p>
+        </footer>
+    </div>
 </body>
 </html>

@@ -15,10 +15,10 @@
                     <li class="nav-item">
                         <c:choose>
                             <c:when test="${not empty sessionScope.username}">
-                                <span style="color: white;">Welcome, ${sessionScope.username}!</span>
+                                <span class="text-white">Welcome, ${sessionScope.username}!</span>
                             </c:when>
                             <c:otherwise>
-                                <span style="color: white;">Not logged in</span>
+                                <span class="text-white">Not logged in</span>
                             </c:otherwise>
                         </c:choose>
                     </li>

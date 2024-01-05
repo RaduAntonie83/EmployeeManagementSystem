@@ -2,23 +2,14 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:pageTemplate pageTitle="EditEmployee">
-    <h1>Edit Employee</h1>
-    <style>
-        .form-container {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            width: 30%;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-    </style>
+    <h1 class="text-white">Edit Employee</h1>
 
     <div class="form-container">
 
         <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/EditEmployee">
             <div class="row">
                 <div class="col-md-10 mb-3">
-                    <label for="name">Name</label>
+                    <label class="text-white" for="name">Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="" value="" required>
                     <div class="invalid-feedback">
                         Name is required.
@@ -28,7 +19,7 @@
 
             <div class="row">
                 <div class="col-md-10 mb-3">
-                    <label for="email">E-mail</label>
+                    <label class="text-white" for="email">E-mail</label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="" value="" required>
                     <div class="invalid-feedback">
                         E-mail is required.
@@ -38,7 +29,7 @@
 
             <div class="row">
                 <div class="col-md-10 mb-3">
-                    <label for="address">Address</label>
+                    <label class="text-white" for="address">Address</label>
                     <input type="text" class="form-control" id="address" name="address" placeholder="" value="" required>
                     <div class="invalid-feedback">
                         Address is required.
@@ -48,7 +39,7 @@
 
             <div class="row">
                 <div class="col-md-10 mb-3">
-                    <label for="salary">Salary</label>
+                    <label class="text-white" for="salary">Salary</label>
                     <input type="text" class="form-control" id="salary" name="salary" placeholder="" value="" required>
                     <div class="invalid-feedback">
                         Salary is required.
@@ -58,7 +49,7 @@
 
             <div class="row">
                 <div class="col-md-5 mb-3">
-                    <label for="class">Class</label>
+                    <label class="text-white" for="class">Class</label>
                     <input type="text" class="form-control" id="class" name="class" placeholder="" value="" required>
                     <div class="invalid-feedback">
                         Class is required.
@@ -66,7 +57,7 @@
                 </div>
 
                 <div class="col-md-5 mb-3">
-                    <label for="Hours">Hours</label>
+                    <label class="text-white" for="Hours">Hours</label>
                     <input type="text" class="form-control" id="hours" name="hours" placeholder="" value="" required>
                     <div class="invalid-feedback">
                         Hours are required.
@@ -76,7 +67,7 @@
 
             <div class="row">
                 <div class="col-md-5 mb-3">
-                    <label for="birthdate">Birthdate</label>
+                    <label class="text-white" for="birthdate">Birthdate</label>
                     <input type="date" class="form-control" id="birthdate" name="birthdate" required>
                     <div class="invalid-feedback">
                         Birthdate is required.
@@ -84,7 +75,7 @@
                 </div>
 
                 <div class="col-md-5 mb-3">
-                    <label for="gender">Gender</label>
+                    <label class="text-white" for="gender">Gender</label>
                     <select class="form-control" id="gender" name="gender" required>
                         <option value="" selected disabled>Select </option>
                         <option value="male">Male</option>

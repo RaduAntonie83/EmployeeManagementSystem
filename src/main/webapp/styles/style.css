@@ -1,0 +1,73 @@
+.text-center{
+    text-align: center;
+}
+
+.login-button{
+    font-size: 1.5em;
+    margin-left: 350px;
+}
+
+.background-blue{
+    background: url('https://img.freepik.com/free-vector/dark-blue-gradient-background_78370-2078.jpg?size=626&ext=jpg&ga=GA1.1.1222169770.1703030400&semt=ais') center/cover no-repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+.text-white{
+    color: aliceblue;
+}
+
+.display-flex{
+    display: flex;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.min-height-100vh{
+    min-height: 100vh;
+}
+
+.no-margin{
+    margin: 0;
+}
+
+.flex-1{
+    flex: 1;
+}
+
+.flex-end{
+    align-items: flex-end;
+}
+
+.padding-10px{
+    padding: 10px;
+}
+
+.background-white-rounded{
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.background-light-gray{
+    background: lightgray;
+}
+
+.checkbox-sml{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    width: 30%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
