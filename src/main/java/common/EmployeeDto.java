@@ -4,21 +4,22 @@ import java.time.LocalDateTime;
 
 public class EmployeeDto {
 
-    public EmployeeDto(Long id, String name, String gender, LocalDateTime dateOfBirth, String address, Integer salary, String religion, String password, int workingHours) {
-        this.id = id;
+    public EmployeeDto(Long id, String name, String email, String address, Integer salary, String employeeClass, Integer hours, LocalDateTime birthdate, String gender) {
+        this.id=id;
         this.name = name;
-        this.gender = gender;
-        this.dateOfBirth = dateOfBirth;
+        this.email=email;
         this.address = address;
         this.salary = salary;
-        this.religion = religion;
-        this.password = password;
-        this.workingHours=workingHours;
+        this.employeeClass = employeeClass;
+        this.hours=hours;
+        this.birthdate=birthdate;
+        this.gender=gender;
+
     }
 
-    private Long id;
+    Long id;
 
-    public Long Getid() {
+    public Long getId() {
         return id;
     }
 
@@ -28,17 +29,9 @@ public class EmployeeDto {
         return name;
     }
 
-    private String gender;
+    private String email;
 
-    public String getGender() {
-        return gender;
-    }
-
-    private LocalDateTime dateOfBirth;
-
-    public LocalDateTime getDateOfBirth() {
-        return dateOfBirth;
-    }
+    public String getEmail() { return email; }
 
     private String address;
 
@@ -52,18 +45,27 @@ public class EmployeeDto {
         return salary;
     }
 
-    private String religion;
+    private String employeeClass;
 
-    public String getReligion() {
-        return religion;
+    public String getemployeeClass(){
+        return employeeClass;
     }
 
-    private String password;
+    private Integer hours;
 
-    public String getPassword() {
-        return password;
+    public Integer getHours() {
+        return hours;
     }
 
-    private  int workingHours;
-    public  int getWorkingHours(){return workingHours;}
+    private LocalDateTime birthdate;
+
+    public LocalDateTime getBirthdate() {
+        return birthdate;
+    }
+
+    private String gender;
+
+    public String getGender() {
+        return gender;
+    }
 }

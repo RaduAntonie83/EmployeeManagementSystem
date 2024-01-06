@@ -5,10 +5,7 @@ import com.employee.employeemanagementsystem.entities.Lecturer;
 import common.EmployeeDto;
 import jakarta.ejb.EJBException;
 import jakarta.ejb.Stateless;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
-import jakarta.persistence.TypedQuery;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -23,7 +20,7 @@ public class EmployeeBean {
     public List<EmployeeDto> copyEmployeesToDto(List<Lecturer> employees) {
         List<EmployeeDto> list = new ArrayList<>();
         for (Employee i : employees) {
-            list.add(new EmployeeDto(i.getId(), i.getName(), i.getGender(), i.getDateOfBirth(), i.getAddress(), i.getSalary(), i.getReligion(), i.getPassword(), i.getWorkingHours()));
+            list.add(new EmployeeDto(i.getId(),i.getName(),i.getEmail(), i.getAddress(), i.getSalary(), i.getEmployeeClass(), i.getHours(), i.getDateOfBirth(), i.getGender()));
         }
         return list;
     }
@@ -31,7 +28,7 @@ public class EmployeeBean {
     public List<EmployeeDto> findAllEmployees() {
         LOG.info("findAllEmployees");
         try {
-            Query query = entityManager.createNativeQuery("SELECT id, name, gender, dateOfBirth, address, salary, religion, password, workingHours FROM Employee");
+            Query query = entityManager.createNativeQuery("SELECT id, name, address, salary, workinghours, dateOfBirth, gender FROM Employee");
             List<Object[]> results = query.getResultList();
 
             List<Lecturer> employees = new ArrayList<>();
@@ -39,15 +36,11 @@ public class EmployeeBean {
                 Lecturer lecturer = new Lecturer();
                 lecturer.setId((Long) result[0]);
                 lecturer.setName((String) result[1]);
-                lecturer.setGender((String) result[2]);
-                lecturer.setDateOfBirth((LocalDateTime) result[3]);
-                lecturer.setAddress((String) result[4]);
-                lecturer.setSalary((Integer) result[5]);
-                lecturer.setReligion((String) result[6]);
-                lecturer.setPassword((String) result[7]);
-                lecturer.setWorkingHours((Integer) result[8]);
-
-                // Additional properties specific to Lecturer...
+                lecturer.setAddress((String) result[2]);
+                lecturer.setSalary((Integer) result[3]);
+                lecturer.setHours((Integer) result[4]);
+                lecturer.setDateOfBirth((LocalDateTime) result[5]);
+                lecturer.setGender((String) result[6]);
 
                 employees.add(lecturer);
             }
@@ -57,32 +50,42 @@ public class EmployeeBean {
         }
     }
 
-    public void createEmployee(Long id, String name, String gender, LocalDateTime dateOfBirth, String address, Integer salary, String religion, String password) {
+    public void createEmployee(Long id, String name, String email, String address, int salary, int hours, LocalDateTime birthdate, String gender) {
         LOG.info("create Employee");
 
-        Employee employee = new Lecturer();
+        Lecturer employee = new Lecturer();
         employee.setId(id);
         employee.setName(name);
-        employee.setGender(gender);
-        employee.setDateOfBirth(dateOfBirth);
+        employee.setGender(email);
+        employee.setDateOfBirth(birthdate);
         employee.setAddress(address);
         employee.setSalary(salary);
-        employee.setReligion(religion);
-        employee.setPassword(password);
-        entityManager.persist(employee);
+        employee.setHours(hours);
+        employee.setGender(gender);
+        String sqlString = "INSERT INTO employee (ID, ADDRESS, GENDER, NAME, SALARY, WORKINGHOURS) VALUES (";
+        sqlString += String.valueOf(id);
+        sqlString += ",";
+        sqlString = sqlString + "'" + address + "',";
+       // sqlString = sqlString + "'" + java.sql.Timestamp.valueOf(birthdate) + "',";
+        sqlString = sqlString + "'" + gender + "',";
+        sqlString = sqlString + "'" + name + "',";
+        sqlString = sqlString + salary + ",";
+        sqlString = sqlString + hours + ");";
+        entityManager.createNativeQuery(sqlString);
     }
 
-    public void updateEmployee(Long id, String name, String gender, LocalDateTime dateOfBirth, String address, Integer salary, String religion, String password) {
+    public void updateEmployee(Long id,String name, String email, String address, Integer salary, String employeeClass, Integer hours,LocalDateTime birthdate, String gender) {
         LOG.info("update Employee");
-        Lecturer employee = entityManager.find(Lecturer.class, id);
+        Lecturer employee = entityManager.find(Lecturer.class, email);
         employee.setId(id);
         employee.setName(name);
-        employee.setGender(gender);
-        employee.setDateOfBirth(dateOfBirth);
+        employee.setEmail(email);
         employee.setAddress(address);
         employee.setSalary(salary);
-        employee.setReligion(religion);
-        employee.setPassword(password);
+        employee.setEmployeeClass(employeeClass);
+        employee.setHours(hours);
+        employee.setDateOfBirth(birthdate);
+        employee.setGender(gender);
     }
 
     public void deleteEmployee(Collection<Long> ids) {

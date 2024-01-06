@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public abstract class Employee {
     @Id
     @GeneratedValue
-    protected Long id;
+    Long id;
 
     public void setId(Long id) {
         this.id = id;
@@ -31,26 +31,14 @@ public abstract class Employee {
         this.name = name;
     }
 
-    @Basic
-    protected String gender;
+    protected String email;
 
-    public String getGender() {
-        return gender;
+    public String getEmail() {
+        return email;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    @Basic
-    protected LocalDateTime dateOfBirth;
-
-    public LocalDateTime getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDateTime dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Basic
@@ -76,7 +64,54 @@ public abstract class Employee {
     }
 
     @Basic
+    protected String employeeClass;
+
+    public String getEmployeeClass() {
+        return employeeClass;
+    }
+
+    public void setEmployeeClass(String employeeClass) {
+        this.employeeClass = employeeClass;
+    }
+
+    @Basic
+    protected Integer hours;
+
+    public Integer getHours() {
+        return hours;
+    }
+
+    public void setHours(Integer hours) {
+        this.hours = hours;
+    }
+
+    @Basic
+    protected LocalDateTime dateOfBirth;
+
+    public LocalDateTime getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDateTime dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    @Basic
+    protected String gender;
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    @Basic
     protected String religion;
+
+    @Basic
+    protected String password;
 
     public String getReligion() {
         return religion;
@@ -86,25 +121,11 @@ public abstract class Employee {
         this.religion = religion;
     }
 
-    @Basic
-    protected String password;
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Basic
-    protected Integer workingHours;
-
-    public Integer getWorkingHours() {
-        return workingHours;
-    }
-
-    public void setWorkingHours(Integer workingHours) {
-        this.workingHours = workingHours;
     }
 }

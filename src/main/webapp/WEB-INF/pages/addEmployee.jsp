@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:pageTemplate pageTitle="AddEmployee">
     <h1>Add Employee</h1>
+    <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/AddEmployee">
     <style>
         .form-container {
             background: rgba(255, 255, 255, 0.2); /* Adjust the alpha value for transparency */
@@ -14,8 +15,6 @@
     </style>
 
     <div class="form-container">
-
-        <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/AddEmployee">
             <div class="row">
                 <div class="col-md-10 mb-3">
                     <label for="name">Name</label>
@@ -99,12 +98,12 @@
 
             <div class="row text-center">
                 <div class="col-md-6 mb-3 mx-auto">
-                    <button type="button" class="btn btn-primary">+ Add<i class="fas fa-plus"></i></button>
+                    <button type="submit" class="btn btn-primary">+ Add<i class="fas fa-plus"></i></button>
                 </div>
             </div>
             <img src="https://www.pockethrms.com/wp-content/uploads/2022/01/Happy-Workforce.jpg" alt="welcome" style="margin-left: 500px; margin-top: -550px; width:800px; border-radius: 10px;">
-        </form>
     </div>
+    </form>
 </t:pageTemplate>
 
 
