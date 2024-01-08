@@ -9,6 +9,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
+import jakarta.xml.bind.SchemaOutputResolver;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -23,7 +24,7 @@ public class EmployeeBean {
     public List<EmployeeDto> copyEmployeesToDto(List<Lecturer> employees) {
         List<EmployeeDto> list = new ArrayList<>();
         for (Employee i : employees) {
-            list.add(new EmployeeDto(i.getId(), i.getName(), i.getGender(), i.getDateOfBirth(), i.getAddress(), i.getSalary(), i.getReligion(), i.getPassword(), i.getWorkingHours()));
+            list.add(new EmployeeDto(i.getId(), i.getName(), i.getGender(), i.getDateOfBirth(), i.getAddress(), i.getSalary(), i.getReligion(), i.getPassword(), i.getWorkingHours(),  i.getEmail()));
         }
         return list;
     }
@@ -31,7 +32,7 @@ public class EmployeeBean {
     public List<EmployeeDto> findAllEmployees() {
         LOG.info("findAllEmployees");
         try {
-            Query query = entityManager.createNativeQuery("SELECT id, name, gender, dateOfBirth, address, salary, religion, password, workingHours FROM Employee");
+            Query query = entityManager.createNativeQuery("SELECT id, name, gender, dateOfBirth, address, salary, religion, password, workingHours, email FROM Employee");
             List<Object[]> results = query.getResultList();
 
             List<Lecturer> employees = new ArrayList<>();
@@ -46,18 +47,20 @@ public class EmployeeBean {
                 lecturer.setReligion((String) result[6]);
                 lecturer.setPassword((String) result[7]);
                 lecturer.setWorkingHours((Integer) result[8]);
+                lecturer.setEmail((String) result[9]);
 
-                // Additional properties specific to Lecturer...
+
 
                 employees.add(lecturer);
             }
+            System.out.println(employees);
             return copyEmployeesToDto(employees);
         } catch (Exception e) {
-            throw new EJBException(e);
+            throw new EJBException("cevaaaaa");
         }
     }
 
-    public void createEmployee(Long id, String name, String gender, LocalDateTime dateOfBirth, String address, Integer salary, String religion, String password) {
+    public void createEmployee(Long id, String name, String gender, LocalDateTime dateOfBirth, String address, Integer salary, String religion, String password,String email) {
         LOG.info("create Employee");
 
         Employee employee = new Lecturer();
@@ -69,10 +72,11 @@ public class EmployeeBean {
         employee.setSalary(salary);
         employee.setReligion(religion);
         employee.setPassword(password);
+        employee.setEmail(email);
         entityManager.persist(employee);
     }
 
-    public void updateEmployee(Long id, String name, String gender, LocalDateTime dateOfBirth, String address, Integer salary, String religion, String password) {
+    public void updateEmployee(Long id, String name, String gender, LocalDateTime dateOfBirth, String address, Integer salary, String religion, String password, String email) {
         LOG.info("update Employee");
         Lecturer employee = entityManager.find(Lecturer.class, id);
         employee.setId(id);
@@ -83,6 +87,7 @@ public class EmployeeBean {
         employee.setSalary(salary);
         employee.setReligion(religion);
         employee.setPassword(password);
+        employee.setEmail(email);
     }
 
     public void deleteEmployee(Collection<Long> ids) {
@@ -91,5 +96,26 @@ public class EmployeeBean {
             Lecturer employee = entityManager.find(Lecturer.class, id);
             entityManager.remove(employee);
         }
+
+
     }
-}
+
+
+    public boolean isValidLogin(String email, String password) {
+        try {
+            Query query = entityManager.createNativeQuery("SELECT COUNT(*) FROM employee WHERE email = ? AND password = ?");
+            query.setParameter(1, email);
+            query.setParameter(2, password);
+
+            Long count = (Long) query.getSingleResult();
+
+            return count > 0;
+        } catch (Exception e) {
+            throw new EJBException(e);
+        }
+    }
+
+
+    }
+
+

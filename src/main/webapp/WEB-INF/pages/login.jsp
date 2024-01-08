@@ -26,16 +26,16 @@
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                     <h1 class="text-white">Login</h1>
                     <br>
-                    <form>
+                    <form method="POST" action= "j_security_check">
 
                         <div class="form-outline mb-4">
-                            <input type="email" id="emailAddress" class="form-control form-control-lg" />
-                            <label class="form-label text-white" for="emailAddress">Email address</label>
+                            <input type="email" id="email" class="form-control form-control-lg" name="j_username"/>
+                            <label class="form-label text-white" for="email">Email address</label>
                         </div>
 
 
                         <div class="form-outline mb-4">
-                            <input type="password" id="password" class="form-control form-control-lg" />
+                            <input type="password" id="password" class="form-control form-control-lg" name="j_password" />
                             <label class="form-label text-white" for="password">Password</label>
                         </div>
 
@@ -49,7 +49,7 @@
                         </div>
 
 
-                        <button type="submit" class="btn btn-primary btn-lg btn-block white-text">Sign in</button>
+                        <a type="button"  href="${pageContext.request.contextPath}/Employees" class="btn btn-primary btn-lg btn-block white-text">Sign in</a>
 
 
 
@@ -58,4 +58,7 @@
             </div>
         </div>
     </section>
+    <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <script src="form-validation.js"></script>
 </t:pageTemplate>

@@ -107,4 +107,15 @@ public abstract class Employee {
     public void setWorkingHours(Integer workingHours) {
         this.workingHours = workingHours;
     }
+
+    @Basic
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

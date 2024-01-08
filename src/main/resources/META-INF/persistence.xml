@@ -7,6 +7,7 @@
         <jta-data-source>jdbc/EmployeeManagementResource</jta-data-source>
 
         <class>com.employee.employeemanagementsystem.entities.Employee</class>
+        <class>com.employee.employeemanagementsystem.entities.EmployeeGroup</class>
 
         <properties>
             <property name="jakarta.persistence.schema-generation.database.action" value="create-or-extend-tables" />
