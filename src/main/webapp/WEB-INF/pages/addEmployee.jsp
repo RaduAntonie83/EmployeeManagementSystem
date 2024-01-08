@@ -3,19 +3,20 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:pageTemplate pageTitle="AddEmployee">
     <h1>Add Employee</h1>
-    <style>
-        .form-container {
-            background: rgba(255, 255, 255, 0.2); /* Adjust the alpha value for transparency */
-            padding: 20px;
-            width: 30%;
-            border-radius: 10px;
-            backdrop-filter: blur(10px); /* Adjust the blur value */
-        }
-    </style>
+    <div class="row">
+    <div class="col-md-10">
+    <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/AddEmployee">
+        <style>
+            .form-container {
+                background: rgba(255, 255, 255, 0.2); /* Adjust the alpha value for transparency */
+                padding: 20px;
+                width: 30%;
+                border-radius: 10px;
+                backdrop-filter: blur(10px); /* Adjust the blur value */
+            }
+        </style>
 
-    <div class="form-container">
-
-        <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/AddEmployee">
+        <div class="form-container">
             <div class="row">
                 <div class="col-md-10 mb-3">
                     <label for="name">Name</label>
@@ -25,16 +26,6 @@
                     </div>
                 </div>
             </div>
-
-                <div class="row">
-                    <div class="col-md-10 mb-3">
-                        <label for="email">E-mail</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="" value="" required>
-                        <div class="invalid-feedback">
-                            E-mail is required.
-                        </div>
-                    </div>
-                </div>
 
             <div class="row">
                 <div class="col-md-10 mb-3">
@@ -47,21 +38,11 @@
             </div>
 
             <div class="row">
-                <div class="col-md-10 mb-3">
+                <div class="col-md-5 mb-3">
                     <label for="salary">Salary</label>
                     <input type="text" class="form-control" id="salary" name="salary" placeholder="" value="" required>
                     <div class="invalid-feedback">
                         Salary is required.
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-5 mb-3">
-                    <label for="class">Class</label>
-                    <input type="text" class="form-control" id="class" name="class" placeholder="" value="" required>
-                    <div class="invalid-feedback">
-                        Class is required.
                     </div>
                 </div>
 
@@ -99,11 +80,15 @@
 
             <div class="row text-center">
                 <div class="col-md-6 mb-3 mx-auto">
-                    <button type="button" class="btn btn-primary">+ Add<i class="fas fa-plus"></i></button>
+                    <button type="submit" class="btn btn-primary">+ Add<i class="fas fa-plus"></i></button>
                 </div>
             </div>
-            <img src="https://www.pockethrms.com/wp-content/uploads/2022/01/Happy-Workforce.jpg" alt="welcome" style="margin-left: 500px; margin-top: -550px; width:800px; border-radius: 10px;">
-        </form>
+            <div class="col-md-6  d-flex align-items-center justify-content-left">
+            <img src="https://www.pockethrms.com/wp-content/uploads/2022/01/Happy-Workforce.jpg" alt="welcome" style="margin-left: 600px; margin-top: -350px; width: 600px; border-radius: 10px;">
+            </div>
+        </div>
+    </form>
+    </div>
     </div>
 </t:pageTemplate>
 
