@@ -98,16 +98,19 @@
                 </svg>
 
         </div>
-        <div class="row border-bottom">
             <c:forEach var="employee" items="${employeeList}">
+        <div class="row border-bottom">
+
             <div class="col">
 
                 <div class="form-check">
                     <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                     </label>
+
                 </div>
             </div>
+
             <div class="col">
                ${employee.name}
             </div>
