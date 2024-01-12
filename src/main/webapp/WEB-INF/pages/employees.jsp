@@ -2,6 +2,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:pageTemplate pageTitle="Employees">
+    <form method="POST" action="${pageContext.request.contextPath}/Employee">
 <div class="background-white-rounded">
     <div>
         <div class="row">
@@ -90,68 +91,88 @@
                     <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
                 </svg>
             </div>
-        </div>
-        <div class="row border-bottom">
             <div class="col">
+                Email
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+                </svg>
+
+        </div>
+            <c:forEach var="employee" items="${employeeList}">
+        <div class="row border-bottom">
+
+            <div class="col">
+
                 <div class="form-check">
                     <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                     </label>
+
                 </div>
             </div>
+
             <div class="col">
-                Harry Style
+               ${employee.name}
             </div>
             <div class="col">
-                Wall Street, nr. 17
+                ${employee.address}
             </div>
             <div class="col">
-                10.000 $
+                ${employee.salary}
             </div>
             <div class="col">
-                Lecturer
+                ${employee.class}
             </div>
             <div class="col">
-                50-55
+                ${employee.workingHours}
             </div>
             <div class="col">
-                Male
+                ${employee.gender}
             </div>
             <div class="col">
-                08.08.1975
+                ${employee.dateOfBirth}
             </div>
+            <div class="col">
+                ${employee.email}
+            </div>
+            </c:forEach>
         </div>
-        <div class="row border-bottom">
-            <div class="col">
-                <div class="form-check">
-                    <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                    </label>
-                </div>
-            </div>
-            <div class="col">
-                Harry Style
-            </div>
-            <div class="col">
-                Wall Street, nr. 17
-            </div>
-            <div class="col">
-                10.000 $
-            </div>
-            <div class="col">
-                Lecturer
-            </div>
-            <div class="col">
-                50-55
-            </div>
-            <div class="col">
-                Male
-            </div>
-            <div class="col">
-                08.08.1975
-            </div>
-        </div>
+<%--        <div class="row border-bottom">--%>
+<%--            <div class="col">--%>
+<%--                <div class="form-check">--%>
+<%--                    <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckDefaultt">--%>
+<%--                    <label class="form-check-label" for="flexCheckDefault">--%>
+<%--                    </label>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <div class="col">--%>
+<%--                Harry Style--%>
+<%--            </div>--%>
+<%--            <div class="col">--%>
+<%--                Wall Street, nr. 17--%>
+<%--            </div>--%>
+<%--            <div class="col">--%>
+<%--                10.000 $--%>
+<%--            </div>--%>
+<%--            <div class="col">--%>
+<%--                Lecturer--%>
+<%--            </div>--%>
+<%--            <div class="col">--%>
+<%--                50-55--%>
+<%--            </div>--%>
+<%--            <div class="col">--%>
+<%--                Male--%>
+<%--            </div>--%>
+<%--            <div class="col">--%>
+<%--                08.08.1975--%>
+<%--            </div>--%>
+<%--            <div class="col">--%>
+<%--                email@emial.com--%>
+<%--            </div>--%>
+<%--        </div>--%>
     </div>
 </div>
+</div>
+    </form>
 </t:pageTemplate>
 

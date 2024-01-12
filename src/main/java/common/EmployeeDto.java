@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class EmployeeDto {
 
-    public EmployeeDto(Long id, String name, String gender, LocalDateTime dateOfBirth, String address, Integer salary, String religion, String password, int workingHours) {
+    public EmployeeDto(Long id, String name, String gender, LocalDateTime dateOfBirth, String address, Integer salary, String religion, String password, int workingHours,String email) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -14,6 +14,7 @@ public class EmployeeDto {
         this.religion = religion;
         this.password = password;
         this.workingHours=workingHours;
+        this.email=email;
     }
 
     private Long id;
@@ -66,4 +67,7 @@ public class EmployeeDto {
 
     private  int workingHours;
     public  int getWorkingHours(){return workingHours;}
+
+    private String email;
+    public String getEmail(){return email;}
 }

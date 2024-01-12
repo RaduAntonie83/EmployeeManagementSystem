@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
 import java.time.LocalDateTime;
+
 @MappedSuperclass
 public abstract class Employee {
     @Id
@@ -20,9 +21,9 @@ public abstract class Employee {
         return id;
     }
 
-    @Basic
-    protected String name;
 
+    protected String name;
+    @Basic
     public String getName() {
         return name;
     }
@@ -31,7 +32,7 @@ public abstract class Employee {
         this.name = name;
     }
 
-    @Basic
+
     protected String gender;
 
     public String getGender() {
@@ -42,7 +43,7 @@ public abstract class Employee {
         this.gender = gender;
     }
 
-    @Basic
+
     protected LocalDateTime dateOfBirth;
 
     public LocalDateTime getDateOfBirth() {
@@ -53,7 +54,7 @@ public abstract class Employee {
         this.dateOfBirth = dateOfBirth;
     }
 
-    @Basic
+
     protected String address;
 
     public String getAddress() {
@@ -64,7 +65,7 @@ public abstract class Employee {
         this.address = address;
     }
 
-    @Basic
+
     protected Integer salary;
 
     public Integer getSalary() {
@@ -75,7 +76,6 @@ public abstract class Employee {
         this.salary = salary;
     }
 
-    @Basic
     protected String religion;
 
     public String getReligion() {
@@ -86,7 +86,7 @@ public abstract class Employee {
         this.religion = religion;
     }
 
-    @Basic
+
     protected String password;
 
     public String getPassword() {
@@ -97,7 +97,7 @@ public abstract class Employee {
         this.password = password;
     }
 
-    @Basic
+
     protected Integer workingHours;
 
     public Integer getWorkingHours() {
@@ -106,5 +106,16 @@ public abstract class Employee {
 
     public void setWorkingHours(Integer workingHours) {
         this.workingHours = workingHours;
+    }
+
+
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

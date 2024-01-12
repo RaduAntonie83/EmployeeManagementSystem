@@ -26,16 +26,16 @@
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                     <h1 class="text-white">Login</h1>
                     <br>
-                    <form>
+                    <form class="form-sigin" method="POST" action= "j_security_check">
 
                         <div class="form-outline mb-4">
-                            <input type="email" id="emailAddress" class="form-control form-control-lg" />
-                            <label class="form-label text-white" for="emailAddress">Email address</label>
+                            <input type="email" id="email" class="form-control form-control-lg" name="j_username"/>
+                            <label class="form-label text-white" for="email">Email address</label>
                         </div>
 
 
                         <div class="form-outline mb-4">
-                            <input type="password" id="password" class="form-control form-control-lg" />
+                            <input type="password" id="password" class="form-control form-control-lg" name="j_password" />
                             <label class="form-label text-white" for="password">Password</label>
                         </div>
 
@@ -58,4 +58,7 @@
             </div>
         </div>
     </section>
+
+
+
 </t:pageTemplate>

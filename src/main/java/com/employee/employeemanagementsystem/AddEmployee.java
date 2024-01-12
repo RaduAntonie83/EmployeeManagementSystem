@@ -24,6 +24,7 @@ public class AddEmployee extends HttpServlet {
         int hours = Integer.parseInt(request.getParameter("hours"));
         String gender = request.getParameter("gender");
         String birthdate = request.getParameter("birthdate");
+        String email = request.getParameter("email");
     }
 
 }
