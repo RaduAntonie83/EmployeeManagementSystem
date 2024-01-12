@@ -17,8 +17,8 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<EmployeeDto> employees = employeeBean.findAllEmployees();
-    //    request.setAttribute("employeeList", employees);
+     //   List<EmployeeDto> employees = employeeBean.findAllEmployees();
+     //   request.setAttribute("employeeList", employees);
 
    //     String email = request.getParameter("email");
      //   String password = request.getParameter("password");
@@ -39,6 +39,7 @@ public class Login extends HttpServlet {
         request.setAttribute("message", "Email or password incorrect");
 //        String email = request.getParameter("email");
 //        String password = request.getParameter("password");
+
         request.getRequestDispatcher("/WEB-INF/pages/login.jsp").forward(request, response);
 
 
