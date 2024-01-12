@@ -5,14 +5,12 @@ import com.employee.employeemanagementsystem.entities.Lecturer;
 import common.EmployeeDto;
 import jakarta.ejb.EJBException;
 import jakarta.ejb.Stateless;
+import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
-import jakarta.xml.bind.SchemaOutputResolver;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -21,6 +19,8 @@ public class EmployeeBean {
     private static final Logger LOG = Logger.getLogger(EmployeeBean.class.getName());
     @PersistenceContext
     EntityManager entityManager;
+    @Inject
+    PasswordBean passwordBean;
 
     public List<EmployeeDto> copyEmployeesToDto(List<Employee> employees) {
         List<EmployeeDto> list = new ArrayList<>();
@@ -52,7 +52,7 @@ public class EmployeeBean {
         employee.setAddress(address);
         employee.setSalary(salary);
         employee.setReligion(religion);
-        employee.setPassword(password);
+        employee.setPassword(passwordBean.convertToSha256(password));
         employee.setEmail(email);
         employee.setWorkingHours(workingHours);
         entityManager.persist(employee);
@@ -68,7 +68,7 @@ public class EmployeeBean {
         employee.setAddress(address);
         employee.setSalary(salary);
         employee.setReligion(religion);
-        employee.setPassword(password);
+        employee.setPassword(passwordBean.convertToSha256(password));
         employee.setEmail(email);
     }
 
