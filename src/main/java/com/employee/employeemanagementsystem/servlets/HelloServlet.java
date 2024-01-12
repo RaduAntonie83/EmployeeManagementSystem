@@ -1,4 +1,4 @@
-package com.employee.employeemanagementsystem;
+package com.employee.employeemanagementsystem.servlets;
 
 import java.io.*;
 

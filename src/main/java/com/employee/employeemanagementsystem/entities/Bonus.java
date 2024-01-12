@@ -1,18 +1,18 @@
-package com.employee.employeemanagementsystem;
+package com.employee.employeemanagementsystem.entities;
 
-public class Bonus {
+import java.io.Serializable;
 
-
+public class Bonus implements Serializable {
     public enum BonusType {
         PERFORMANCE,
         CHRISTMAS,
-
         NUMBER_OF_SHARES,
         VACATION,
         EXTRA;
-
     }
+
     private BonusType bonusType;
+
     private int amount;
 
     public Bonus(BonusType bonusType, int amount) {
@@ -59,6 +59,4 @@ public class Bonus {
     public void printBonus(){
         System.out.println("Bonus type: " + bonusType + " amount: " + amount);
     }
-
-
 }

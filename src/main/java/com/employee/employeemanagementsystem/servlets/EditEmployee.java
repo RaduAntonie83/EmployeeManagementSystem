@@ -1,4 +1,4 @@
-package com.employee.employeemanagementsystem;
+package com.employee.employeemanagementsystem.servlets;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;

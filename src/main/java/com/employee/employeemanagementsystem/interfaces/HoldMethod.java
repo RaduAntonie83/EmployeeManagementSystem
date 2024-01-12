@@ -1,7 +1,6 @@
-package com.employee.employeemanagementsystem;
+package com.employee.employeemanagementsystem.interfaces;
 
 import com.employee.employeemanagementsystem.entities.Employee;
-import com.employee.employeemanagementsystem.entities.Lecturer;
 
 public class HoldMethod implements PaymentMethod{
     @Override
