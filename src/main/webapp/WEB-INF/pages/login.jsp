@@ -29,8 +29,8 @@
                     <form class="form-sigin" method="POST" action= "j_security_check">
 
                         <div class="form-outline mb-4">
-                            <input type="text" id="name" class="form-control form-control-lg" name="j_username"/>
-                            <label class="form-label text-white" for="name">Email address</label>
+                            <input type="email" id="email" class="form-control form-control-lg" name="j_username"/>
+                            <label class="form-label text-white" for="email">Email address</label>
                         </div>
 
 
