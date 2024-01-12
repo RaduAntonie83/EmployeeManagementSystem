@@ -8,19 +8,7 @@
         <div class="row">
 
             <div class="col-md-6">
-                <form class="needs-validation" novalidate method="POST"
-                      action="${pageContext.request.contextPath}/AddEmployee">
-
-                    <style>
-                        .form-container {
-                            background: rgba(255, 255, 255, 0.2); /* Adjust the alpha value for transparency */
-                            padding: 20px;
-                            width: 60%;
-                            border-radius: 10px;
-                            backdrop-filter: blur(10px); /* Adjust the blur value */
-                        }
-                    </style>
-
+                <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/AddEmployee">
                     <div class="form-container">
                         <div class="row">
                             <div class="col-md-12 mb-3">
@@ -32,7 +20,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-12 mb-3">
                                 <label for="address" style="color: white;">Address</label>
@@ -135,5 +122,3 @@
         </div>
     </div>
 </t:pageTemplate>
-
-
