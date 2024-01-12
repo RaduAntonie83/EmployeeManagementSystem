@@ -13,17 +13,14 @@
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-<c:if test="${not empty sessionScope.name}">
-    <span class="text-white">Welcome, ${sessionScope.name}!</span>
-</c:if>
-<c:if test="${empty sessionScope.name}">
-    <%-- Assuming you set the sessionScope.name attribute to "user" when the user logs in --%>
-    <%
-        // Example: Set the sessionScope.name when the user logs in
-        session.setAttribute("name", "employee");
-    %>
-    <span class="text-white">Welcome, ${sessionScope.name}!</span>
-</c:if>
+                        <c:choose>
+                            <c:when test="${not empty sessionScope.username}">
+                                <span class="text-white">Welcome, ${sessionScope.username}!</span>
+                            </c:when>
+                            <c:otherwise>
+                                <span class="text-white">Not logged in</span>
+                            </c:otherwise>
+                        </c:choose>
                     </li>
                 </ul>
                 <a class="navbar-brand mx-auto" href="">Employee Management</a>
