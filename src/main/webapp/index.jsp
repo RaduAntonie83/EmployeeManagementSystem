@@ -13,12 +13,12 @@
         </div>
         <div class="col-md-6  d-flex align-items-center justify-content-center">
             <c:choose>
-            <c:when test="${pageContext.request.getRemoteUser() == null}">
-            <a type="button" href="${pageContext.request.contextPath}/Login" class="btn btn-light  mt-3 ml-2 login-button">Login  → </a>
-            </c:when>
-            <c:otherwise>
-            <a type="button" href="${pageContext.request.contextPath}/Login" class="btn btn-light  mt-3 ml-2 login-button">Logout  </a>
-            </c:otherwise>
+                <c:when test="${pageContext.request.getRemoteUser() == null}">
+                    <a type="button" href="${pageContext.request.contextPath}/Login" class="btn btn-light  mt-3 ml-2 login-button">Login  → </a>
+                </c:when>
+                <c:otherwise>
+                    <a type="button" href="${pageContext.request.contextPath}/Logout" class="btn btn-light  mt-3 ml-2 login-button">Logout  </a>
+                </c:otherwise>
             </c:choose>
         </div>
     </div>

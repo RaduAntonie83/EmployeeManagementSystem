@@ -1,13 +1,20 @@
 package com.employee.employeemanagementsystem;
 
+import com.employee.employeemanagementsystem.ejb.EmployeeBean;
+import jakarta.inject.Inject;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @WebServlet(name = "AddEmployee", value = "/AddEmployee")
 public class AddEmployee extends HttpServlet {
+    @Inject
+    EmployeeBean employeeBean;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse
             response) throws ServletException, IOException {
@@ -19,12 +26,14 @@ public class AddEmployee extends HttpServlet {
                           HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
         String address = request.getParameter("address");
-        double salary = Double.parseDouble(request.getParameter("salary"));
-        String employeeClass = request.getParameter("employeeClass");
-        int hours = Integer.parseInt(request.getParameter("hours"));
+        int salary = Integer.parseInt(request.getParameter("salary"));
+        String religion = request.getParameter("religion");
+        String password = request.getParameter("password");
+        int workingHours = Integer.parseInt(request.getParameter("workinghours"));
         String gender = request.getParameter("gender");
-        String birthdate = request.getParameter("birthdate");
+        LocalDate dateOfBirth = LocalDate.parse(request.getParameter("dateofbirth"), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String email = request.getParameter("email");
+        employeeBean.createEmployee(name, gender, dateOfBirth, address, salary, religion, password, email, workingHours);
+        response.sendRedirect(request.getContextPath() + "/Employees");
     }
-
 }

@@ -1,13 +1,12 @@
 package com.employee.employeemanagementsystem.entities;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@MappedSuperclass
+@Entity
+@Table(name = "employee")
 public abstract class Employee {
     @Id
     @GeneratedValue
@@ -44,13 +43,13 @@ public abstract class Employee {
     }
 
 
-    protected LocalDateTime dateOfBirth;
+    protected LocalDate dateOfBirth;
 
-    public LocalDateTime getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDateTime dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

@@ -19,20 +19,13 @@ public class Employees extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse
             response) throws ServletException, IOException {
-        //try {
             List<EmployeeDto> employees = employeeBean.findAllEmployees();
-            request.setAttribute("numberOfEmployees", 2);
             request.setAttribute("employeeList", employees);
 
             request.setAttribute("numberOfEmployees", employees.size());
             request.setAttribute("activePage", "Employees");
 
             request.getRequestDispatcher("/WEB-INF/pages/employees.jsp").forward(request, response);
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Something went wrong ");
-//        }
     }
 
     @Override

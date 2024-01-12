@@ -96,80 +96,43 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
                 </svg>
-
+            </div>
         </div>
-            <c:forEach var="employee" items="${employeeList}">
-        <div class="row border-bottom">
-
-            <div class="col">
-
-                <div class="form-check">
-                    <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                    </label>
-
+        <c:forEach var="employee" items="${employeeList}">
+            <div class="row border-bottom">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                   ${employee.name}
+                </div>
+                <div class="col">
+                    ${employee.address}
+                </div>
+                <div class="col">
+                    ${employee.salary}
+                </div>
+                <div class="col">
+                    ${employee.class}
+                </div>
+                <div class="col">
+                    ${employee.workingHours}
+                </div>
+                <div class="col">
+                    ${employee.gender}
+                </div>
+                <div class="col">
+                    ${employee.dateOfBirth}
+                </div>
+                <div class="col">
+                    ${employee.email}
                 </div>
             </div>
-
-            <div class="col">
-               ${employee.name}
-            </div>
-            <div class="col">
-                ${employee.address}
-            </div>
-            <div class="col">
-                ${employee.salary}
-            </div>
-            <div class="col">
-                ${employee.class}
-            </div>
-            <div class="col">
-                ${employee.workingHours}
-            </div>
-            <div class="col">
-                ${employee.gender}
-            </div>
-            <div class="col">
-                ${employee.dateOfBirth}
-            </div>
-            <div class="col">
-                ${employee.email}
-            </div>
-            </c:forEach>
-        </div>
-<%--        <div class="row border-bottom">--%>
-<%--            <div class="col">--%>
-<%--                <div class="form-check">--%>
-<%--                    <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckDefaultt">--%>
-<%--                    <label class="form-check-label" for="flexCheckDefault">--%>
-<%--                    </label>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--            <div class="col">--%>
-<%--                Harry Style--%>
-<%--            </div>--%>
-<%--            <div class="col">--%>
-<%--                Wall Street, nr. 17--%>
-<%--            </div>--%>
-<%--            <div class="col">--%>
-<%--                10.000 $--%>
-<%--            </div>--%>
-<%--            <div class="col">--%>
-<%--                Lecturer--%>
-<%--            </div>--%>
-<%--            <div class="col">--%>
-<%--                50-55--%>
-<%--            </div>--%>
-<%--            <div class="col">--%>
-<%--                Male--%>
-<%--            </div>--%>
-<%--            <div class="col">--%>
-<%--                08.08.1975--%>
-<%--            </div>--%>
-<%--            <div class="col">--%>
-<%--                email@emial.com--%>
-<%--            </div>--%>
-<%--        </div>--%>
+        </c:forEach>
     </div>
 </div>
 </div>
