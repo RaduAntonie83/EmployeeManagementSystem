@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"WRITE_EMPLOYEES"}))
 @WebServlet(name = "EditEmployee", value = "/EditEmployee")
 public class EditEmployee extends HttpServlet {
     @Override

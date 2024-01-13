@@ -1,6 +1,7 @@
 package com.employee.employeemanagementsystem.servlets;
 
 import com.employee.employeemanagementsystem.ejb.EmployeeBean;
+import jakarta.annotation.security.DeclareRoles;
 import jakarta.inject.Inject;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -10,6 +11,9 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"WRITE_EMPLOYEES"}))
+
 
 @WebServlet(name = "AddEmployee", value = "/AddEmployee")
 public class AddEmployee extends HttpServlet {
