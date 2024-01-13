@@ -58,17 +58,17 @@ public class EmployeeBean {
         entityManager.persist(employee);
     }
 
-    public void updateEmployee(Long id, String name, String gender, LocalDate dateOfBirth, String address, Integer salary, String religion, String password, String email) {
+    public void updateEmployee(Long id, String name, String gender, LocalDate dateOfBirth, String address, Integer salary, String religion, String password, String email, Integer workingHours) {
         LOG.info("update Employee");
         Lecturer employee = entityManager.find(Lecturer.class, id);
-        employee.setId(id);
         employee.setName(name);
         employee.setGender(gender);
         employee.setDateOfBirth(dateOfBirth);
         employee.setAddress(address);
         employee.setSalary(salary);
         employee.setReligion(religion);
-        employee.setPassword(passwordBean.convertToSha256(password));
+        if(!password.equals(""))
+            employee.setPassword(passwordBean.convertToSha256(password));
         employee.setEmail(email);
     }
 
@@ -77,6 +77,16 @@ public class EmployeeBean {
         for (Long id : ids) {
             Lecturer employee = entityManager.find(Lecturer.class, id);
             entityManager.remove(employee);
+        }
+    }
+
+    public EmployeeDto findById(Long id) {
+        try {
+            LOG.info("findEmployeeById");
+            Lecturer employee = entityManager.find(Lecturer.class, id);
+            return new EmployeeDto(employee.getId(), employee.getName(), employee.getGender(), employee.getDateOfBirth(), employee.getAddress(), employee.getSalary(), employee.getReligion(), employee.getPassword(), employee.getWorkingHours(),  employee.getEmail());
+        } catch (Exception ex) {
+            throw new EJBException(ex);
         }
     }
 }

@@ -31,12 +31,12 @@
                     </svg>
                     Export
                 </button>
-                <button class="btn btn-primary" type="submit">
+                <a class="btn btn-primary" type="submit" href="${pageContext.request.contextPath}/AddEmployee">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
                     </svg>
                     Add new Employee
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -97,6 +97,9 @@
                     <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
                 </svg>
             </div>
+            <div class="col">
+
+            </div>
         </div>
         <c:forEach var="employee" items="${employeeList}">
             <div class="row border-bottom">
@@ -130,6 +133,9 @@
                 </div>
                 <div class="col">
                     ${employee.email}
+                </div>
+                <div class="col">
+                    <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditEmployee?id=${employee.id}">Edit</a>
                 </div>
             </div>
         </c:forEach>

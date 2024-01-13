@@ -20,7 +20,7 @@ public class EmployeeDto {
 
     private Long id;
 
-    public Long Getid() {
+    public Long getId() {
         return id;
     }
 
