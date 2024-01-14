@@ -11,4 +11,13 @@
             <form-error-page>/Login</form-error-page>
         </form-login-config>
     </login-config>
+    <servlet>
+        <servlet-name>PayEmployees</servlet-name>
+        <servlet-class>com.employee.employeemanagementsystem.servlets.PayEmployees</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PayEmployees</servlet-name>
+        <url-pattern>/PayEmployees</url-pattern>
+    </servlet-mapping>
 </web-app>

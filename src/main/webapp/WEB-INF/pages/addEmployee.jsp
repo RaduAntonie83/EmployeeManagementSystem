@@ -32,7 +32,7 @@
                         <div class="row">
                             <div class="col-md-12 mb-3">
                                 <label for="email" class="text-white">E-mail</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="" value=""
+                                <input type="email" class="form-control" id="email" name="email" placeholder="" value=""
                                        required>
                                 <div class="invalid-feedback">
                                     E-mail is required.
@@ -42,7 +42,7 @@
                         <div class="row">
                             <div class="col-md-12 mb-3">
                                 <label for="password" class="text-white">Password</label>
-                                <input type="text" class="form-control" id="password" name="password" placeholder=""
+                                <input type="password" class="form-control" id="password" name="password" placeholder=""
                                        value="" required>
                                 <div class="invalid-feedback">
                                     Password is required.
@@ -61,7 +61,7 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="salary" class="text-white">Salary</label>
-                                    <input type="text" class="form-control" id="salary" name="salary" placeholder=""
+                                    <input type="number" class="form-control" id="salary" name="salary" placeholder=""
                                            value="" required>
                                     <div class="invalid-feedback">
                                         Salary is required.
@@ -73,6 +73,24 @@
                                            placeholder="" value="" required>
                                     <div class="invalid-feedback">
                                         Working Hours are required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="bank" class="text-white">Bank Name</label>
+                                    <input type="text" class="form-control" id="bank" name="bank" placeholder=""
+                                           value="" required>
+                                    <div class="invalid-feedback">
+                                        Bank is required.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="account" class="text-white">Account Number</label>
+                                    <input type="number" class="form-control" id="account" name="account" placeholder=""
+                                           value="" required>
+                                    <div class="invalid-feedback">
+                                        Account Number is required.
                                     </div>
                                 </div>
                             </div>
@@ -97,6 +115,41 @@
                                         Gender is required.
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="bonus" class="text-white">Bonus</label>
+                                <select class="form-control" id="bonus" name="bonus">
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="PERFORMANCE">Performance</option>
+                                    <option value="COOPERATION">Cooperation</option>
+                                    <option value="EXTRA">Extra</option>
+                                </select>
+                                <label for="employeeClass" class="text-white">Employee Class</label>
+                                <select class="form-control" id="employeeClass" name="employeeClass" required>
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="Lecturer">Lecturer</option>
+                                    <option value="Associate">Associate</option>
+                                    <option value="Executive">Executive</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Employee Class is required.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="taxClass" class="text-white">Tax Class</label>
+                                <select class="form-control" id="taxClass" name="taxClass" required>
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="STANDARD">Standard</option>
+                                    <option value="HIGH_INCOME">High-Income</option>
+                                    <option value="EXPAT">Expat</option>
+                                    <option value="MEDICAL">Medical</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Tax Class is required.
+                                </div>
+                                <label for="numberOfShares" class="text-white">Number of Shares</label>
+                                <input type="number" class="form-control" id="numberOfShares" name="numberOfShares" placeholder=""
+                                       value="">
                             </div>
                         </div>
                         <div class="row text-center">
