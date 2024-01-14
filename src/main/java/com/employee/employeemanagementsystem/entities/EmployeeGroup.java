@@ -11,7 +11,7 @@ public class EmployeeGroup {
 
     private Long id;
 
-
+    private  String email;
     private String name;
     private String employeeGroup;
 
@@ -38,5 +38,13 @@ public class EmployeeGroup {
 
     public void setEmployeeGroup(String employeeGroup) {
         this.employeeGroup = employeeGroup;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
