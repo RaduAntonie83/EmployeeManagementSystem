@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"WRITE_EMPLOYEES"}))
 @WebServlet(name = "EditEmployee", value = "/EditEmployee")
 public class EditEmployee extends HttpServlet {
     @Inject

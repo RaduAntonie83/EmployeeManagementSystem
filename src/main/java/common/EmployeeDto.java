@@ -20,10 +20,6 @@ public class EmployeeDto {
 
     private Long id;
 
-    public Long getId() {
-        return id;
-    }
-
     private String name;
 
     public String getName() {
@@ -71,4 +67,10 @@ public class EmployeeDto {
 
     private String email;
     public String getEmail(){return email;}
+
+    public Long getId() {
+        return id;
+    }
+
+
 }

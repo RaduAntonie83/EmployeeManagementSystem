@@ -12,18 +12,28 @@
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
                 <ul class="navbar-nav">
+
                     <li class="nav-item">
-                        <c:choose>
-                            <c:when test="${not empty sessionScope.username}">
-                                <span class="text-white">Welcome, ${sessionScope.username}!</span>
-                            </c:when>
-                            <c:otherwise>
-                                <span class="text-white">Not logged in</span>
-                            </c:otherwise>
-                        </c:choose>
+                        <c:if test="${pageContext.request.isUserInRole('READ_EMPLOYEES')}">
+                            <a class="nav-link ${activePage eq   'Employees' ? 'active' : ''}"
+                               aria-current="page" href="${pageContext.request.contextPath}/Employees">Employees</a>
+                        </c:if>
                     </li>
                 </ul>
                 <a class="navbar-brand mx-auto" href="">Employee Management</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <c:choose>
+                            <c:when test="${pageContext.request.getRemoteUser() == null}">
+                                <a class="nav-link" href="${pageContext.request.contextPath}/Login">Login</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a class="nav-link" href="${pageContext.request.contextPath}/Logout">Logout</a>
+                            </c:otherwise>
+                        </c:choose>
+                    </li>
+
+                </ul>
             </div>
         </nav>
     </header>
