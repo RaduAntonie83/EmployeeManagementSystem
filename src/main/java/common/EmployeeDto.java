@@ -19,10 +19,6 @@ public abstract class EmployeeDto {
 
     protected Long id;
 
-    public Long getId() {
-        return id;
-    }
-
     protected String name;
 
     public String getName() {
@@ -64,4 +60,10 @@ public abstract class EmployeeDto {
 
     protected String email;
     public String getEmail(){return email;}
+
+    public Long getId() {
+        return id;
+    }
+
+
 }
