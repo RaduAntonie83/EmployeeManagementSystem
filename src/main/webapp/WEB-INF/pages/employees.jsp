@@ -75,6 +75,7 @@
                                 Email
                                 <i class="bi bi-arrow-down"></i>
                             </div>
+                            <div class="col"></div>
                         </div>
                         <c:forEach var="employee" items="${employeeList}">
                             <div class="row border-bottom">
@@ -107,6 +108,9 @@
                                 </div>
                                 <div class="col">
                                         ${employee.email}
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditEmployee?id=${employee.id}">Edit</a>
                                 </div>
                             </div>
                         </c:forEach>

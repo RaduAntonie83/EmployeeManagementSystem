@@ -20,8 +20,6 @@ public class EmployeeDto {
 
     private Long id;
 
-
-
     private String name;
 
     public String getName() {
