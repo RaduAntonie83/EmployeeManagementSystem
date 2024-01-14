@@ -1,9 +1,12 @@
 package com.employee.employeemanagementsystem.entities;
 
+import com.employee.employeemanagementsystem.interfaces.CardMethod;
+import com.employee.employeemanagementsystem.interfaces.PaymentMethod;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "employee")
@@ -116,5 +119,31 @@ public abstract class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public enum TaxClass {
+        STANDARD,
+        HIGH_INCOME,
+        EXPAT,
+        MEDICAL;
+    }
+    private TaxClass taxClass;
+
+    public TaxClass getTaxClass() {
+        return taxClass;
+    }
+
+    public void setTaxClass(TaxClass taxClass) {
+        this.taxClass = taxClass;
+    }
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    protected CardMethod paymentMethod;
+
+    public CardMethod getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(CardMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 }

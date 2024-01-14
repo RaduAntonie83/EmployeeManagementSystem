@@ -1,62 +1,62 @@
 package com.employee.employeemanagementsystem.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 
-public class Bonus implements Serializable {
+@Entity
+public class Bonus{
+    @Id
+    @GeneratedValue
+    private Long id;
+    public Bonus() {
+
+    }
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @OneToOne
+    private Employee employee;
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
     public enum BonusType {
         PERFORMANCE,
-        CHRISTMAS,
-        NUMBER_OF_SHARES,
-        VACATION,
-        EXTRA;
+        COOPERATION,
+        EXTRA,
+        NONE;
     }
 
     private BonusType bonusType;
 
-    private int amount;
-
-    public Bonus(BonusType bonusType, int amount) {
-        this.bonusType = bonusType;
-        this.amount = amount;
-    }
-
     public BonusType getBonusType() {
         return bonusType;
-    }
-
-    public int getAmount() {
-        return amount;
     }
 
     public void setBonusType(BonusType bonusType) {
         this.bonusType = bonusType;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public void calculateBonus(){
+    public int calculateBonus(){
         switch (bonusType){
             case PERFORMANCE:
-                amount = 1000;
-                break;
-            case CHRISTMAS:
-                amount = 500;
-                break;
-            case NUMBER_OF_SHARES:
-                amount = 1000;
-                break;
-            case VACATION:
-                amount = 1000;
-                break;
+                return 1500;
+            case COOPERATION:
+                return 1000;
             case EXTRA:
-                amount = 1000;
-                break;
+                return 500;
+            default:
+                return 0;
         }
-    }
-
-    public void printBonus(){
-        System.out.println("Bonus type: " + bonusType + " amount: " + amount);
     }
 }

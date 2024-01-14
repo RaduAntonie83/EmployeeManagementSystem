@@ -1,6 +1,7 @@
 package com.employee.employeemanagementsystem.servlets;
 
 import com.employee.employeemanagementsystem.ejb.EmployeeBean;
+import com.employee.employeemanagementsystem.entities.Bonus;
 import jakarta.inject.Inject;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -24,16 +25,22 @@ public class AddEmployee extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
+        String employeeType = request.getParameter("employeeClass");
         String name = request.getParameter("name");
         String address = request.getParameter("address");
-        int salary = Integer.parseInt(request.getParameter("salary"));
+        Integer salary = Integer.parseInt(request.getParameter("salary"));
         String religion = request.getParameter("religion");
         String password = request.getParameter("password");
-        int workingHours = Integer.parseInt(request.getParameter("workinghours"));
+        Integer workingHours = Integer.parseInt(request.getParameter("workinghours"));
         String gender = request.getParameter("gender");
         LocalDate dateOfBirth = LocalDate.parse(request.getParameter("dateofbirth"), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String email = request.getParameter("email");
-        employeeBean.createEmployee(name, gender, dateOfBirth, address, salary, religion, password, email, workingHours);
+        String bonus = request.getParameter("bonus");
+        Integer numberOfShares = Integer.parseInt(request.getParameter("numberOfShares"));
+        String taxClass = request.getParameter("taxClass");
+        String bank = request.getParameter("bank");
+        String account = request.getParameter("account");
+        employeeBean.createEmployee(employeeType, name, gender, dateOfBirth, address, salary, religion, password, email, workingHours, bonus, numberOfShares, taxClass, bank, account);
         response.sendRedirect(request.getContextPath() + "/Employees");
     }
 }
