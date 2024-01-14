@@ -72,12 +72,11 @@ public class EmployeeBean {
         employee.setEmail(email);
     }
 
-    public void deleteEmployee(Collection<Long> ids) {
-        LOG.info("Deleting Employee");
-        for (Long id : ids) {
-            Lecturer employee = entityManager.find(Lecturer.class, id);
-            entityManager.remove(employee);
-        }
+
+    public void deleteEmployeesById(Collection<Long> employeeIds) {
+        entityManager.createQuery("DELETE FROM Employee e WHERE e.id IN :employeeIds")
+                .setParameter("employeeIds", employeeIds)
+                .executeUpdate();
     }
 }
 

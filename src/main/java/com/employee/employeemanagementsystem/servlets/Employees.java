@@ -11,6 +11,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 @DeclareRoles({"READ_EMPLOYEES","WRITE_EMPLOYEES"})
 @ServletSecurity(value = @HttpConstraint(rolesAllowed = {"READ_EMPLOYEES"}),
@@ -34,6 +35,14 @@ public class Employees extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
-
+        String[] employeeIdsAsString = request.getParameterValues("employee_ids");
+        if (employeeIdsAsString != null) {
+            List<Long> employeeIds= new ArrayList<>();
+            for (String employeeIdAsString : employeeIdsAsString) {
+                employeeIds.add(Long.parseLong(employeeIdAsString));
+            }
+               employeeBean.deleteEmployeesById(employeeIds);
+    }
+        response.sendRedirect(request.getContextPath() + "/Employees");
     }
 }
