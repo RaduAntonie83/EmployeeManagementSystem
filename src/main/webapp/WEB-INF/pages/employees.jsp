@@ -27,129 +27,128 @@
                             </a>
                         </c:if>
                         <c:if test="${pageContext.request.isUserInRole('WRITE_EMPLOYEES')}">
-                            <button class="btn btn-primary" type="submit" id="addEmployeeButton">
+                            <a class="btn btn-primary" type="submit" href="${pageContext.request.contextPath}/AddEmployee">
                                 <i class="bi bi-plus-lg"></i>
                                 Add new Employee
-                            </button>
+                            </a>
                         </c:if>
                     </div>
                 </div>
             </div>
             <div class = "container-fluid text-justify">
-                <div class="row border-bottom border-top background-light-gray">
-                    <div class="col">
+                <div class="row border-bottom border-top background-light-gray text-center">
+                    <div class="col-1">
                         <div class="form-check">
-                            <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckIndeterminate">
-                            <label class="form-check-label" for="flexCheckIndeterminate">
-                            </label>
+                            <input class="form-check-input checkbox-sml" type="checkbox" id="selectAll" onclick="toggleCheckboxes(this)">
+                            <label for="selectAll">Select All</label>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-1">
                         Name
                         <i class="bi bi-arrow-down"></i>
                     </div>
-                    <div class="col">
+                    <div class="col-1">
                         Address
                         <i class="bi bi-arrow-down"></i>
                     </div>
-                    <div class="col">
+                    <div class="col-1">
                         Salary
                         <i class="bi bi-arrow-down"></i>
                     </div>
-                    <div class="col">
+                    <div class="col-1">
                         Class
                         <i class="bi bi-arrow-down"></i>
                     </div>
-                    <div class="col">
+                    <div class="col-1">
                         Hours
                         <i class="bi bi-arrow-down"></i>
                     </div>
-                    <div class="col">
+                    <div class="col-1">
                         Gender
                         <i class="bi bi-arrow-down"></i>
                     </div>
-                    <div class="col">
+                    <div class="col-1">
                         Birthdate
                         <i class="bi bi-arrow-down"></i>
                     </div>
-                    <div class="col">
+                    <div class="col-1">
                         Email
                         <i class="bi bi-arrow-down"></i>
                     </div>
-                    <div class="col">
+                    <div class="col-1">
+                        Tax Class
+                        <i class="bi bi-arrow-down"></i>
+                    </div>
+                    <div class="col-1">
                         Bonus
                         <i class="bi bi-arrow-down"></i>
                     </div>
-                    <div class="col">
+                    <div class="col-1">
                         Number of Shares
                         <i class="bi bi-arrow-down"></i>
                     </div>
                 </div>
                 <c:forEach var="employee" items="${employeeList}">
-                    <div class="row border-bottom">
-                        <div class="col">
+                    <div class="row border-bottom text-center">
+                        <div class="col-1">
                             <div class="form-check">
-                                <input class="form-check-input checkbox-sml" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                </label>
+                                <input class="form-check-input checkbox-sml employee-checkbox" type="checkbox" name="employee_ids" value="${employee.id}" id="employee_${employee.id}">
+                                <label for="employee_${employee.id}"></label>
                             </div>
                         </div>
-                        <div class="col">
-                           ${employee.name}
+                        <div class="col-1">
+                            <a class="" href="${pageContext.request.contextPath}/EditEmployee?id=${employee.id}">${employee.name}</a>
                         </div>
-                        <div class="col">
+                        <div class="col-1">
                             ${employee.address}
                         </div>
-                        <div class="col">
+                        <div class="col-1">
                             ${employee.salary}
                         </div>
-                        <div class="col">
+                        <div class="col-1">
                             <c:set var="className" value="${fn:split(employee.class, '.')[fn:length(fn:split(employee.class, '.'))-1]}" />
                             <c:set var="simpleClassName" value="${fn:substring(className, 0, fn:length(className) - 3)}" />
                             ${simpleClassName}
                         </div>
-                        <div class="col">
+                        <div class="col-1">
                             ${employee.workingHours}
                         </div>
-                        <div class="col">
+                        <div class="col-1">
                             ${employee.gender}
                         </div>
-                        <div class="col">
+                        <div class="col-1">
                             ${employee.dateOfBirth}
                         </div>
-                        <div class="col">
+                        <div class="col-1">
                             ${employee.email}
                         </div>
-                        <div class="col">
-                                ${employee.email}
+                        <div class="col-1">
+                            ${employee.taxClass}
                         </div>
                         <c:if test="${fn:contains(employee.class, 'common.LecturerDto')}">
-                            <div class="col">
+                            <div class="col-1">
                                 N/A
                             </div>
-                            <div class="col">
+                            <div class="col-1">
                                 N/A
                             </div>
                         </c:if>
                         <c:if test="${fn:contains(employee.class, 'common.AssociateDto')}">
-                            <div class="col">
+                            <div class="col-1">
                                 ${employee.bonus}
                             </div>
-                            <div class="col">
+                            <div class="col-1">
                                 N/A
                             </div>
                         </c:if>
                         <c:if test="${fn:contains(employee.class, 'common.ExecutiveDto')}">
-                            <div class="col">
+                            <div class="col-1">
                                 ${employee.bonus}
                             </div>
-                            <div class="col">
+                            <div class="col-1">
                                 ${employee.numberOfShares}
                             </div>
                         </c:if>
-                        <div class="col">
-                            <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditEmployee?id=${employee.id}">Edit</a>
-                        </div>
                     </div>
                 </c:forEach>
             </div>

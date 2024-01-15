@@ -64,7 +64,7 @@ public class PaymentBean {
     public int calculateSalaryBonuses(Employee employee){
         int paidAmount = employee.getSalary();
         if(employee.getWorkingHours() < 40){
-            paidAmount*=0.5;
+            paidAmount *= 0.5;
         }
         switch (LocalDate.now().getMonth().toString()){
             case "NOVEMBER":

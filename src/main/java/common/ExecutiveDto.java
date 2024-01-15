@@ -14,8 +14,8 @@ public class ExecutiveDto extends EmployeeDto{
     }
 
     private Integer numberOfShares;
-    public ExecutiveDto(Long id, String name, String gender, LocalDate dateOfBirth, String address, Integer salary, String religion, int workingHours, String email, String bonus, Integer numberOfShares) {
-        super(id, name, gender, dateOfBirth, address, salary, religion, workingHours, email);
+    public ExecutiveDto(Long id, String name, String gender, LocalDate dateOfBirth, String address, Integer salary, String religion, int workingHours, String email, String taxClass, String bonus, Integer numberOfShares) {
+        super(id, name, gender, dateOfBirth, address, salary, religion, workingHours, email, taxClass);
         this.bonus = bonus;
         this.numberOfShares = numberOfShares;
     }

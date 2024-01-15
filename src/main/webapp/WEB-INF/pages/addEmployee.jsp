@@ -151,6 +151,17 @@
                                 <input type="number" class="form-control" id="numberOfShares" name="numberOfShares" placeholder=""
                                        value="">
                             </div>
+                            <div class="col-12">
+                                <label for="employee_groups" class="form-label, text-white">Groups</label>
+                                <select class="custom-select" name="employee_groups" id="employee_groups" multiple>
+                                    <c:forEach var="employee_group" items="${employeeGroups}" varStatus="status">
+                                        <option value="${employee_group}">${employee_group}</option>
+                                    </c:forEach>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid employeegroup.
+                                </div>
+                            </div>
                         </div>
                         <div class="row text-center">
                             <div class="col-md-6 mb-3 mx-auto">

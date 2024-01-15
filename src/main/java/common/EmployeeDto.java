@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 public abstract class EmployeeDto {
 
-    public EmployeeDto(Long id, String name, String gender, LocalDate dateOfBirth, String address, Integer salary, String religion, int workingHours, String email) {
+    public EmployeeDto(Long id, String name, String gender, LocalDate dateOfBirth, String address, Integer salary, String religion, int workingHours, String email, String taxClass) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -15,6 +15,7 @@ public abstract class EmployeeDto {
         this.religion = religion;
         this.workingHours=workingHours;
         this.email=email;
+        this.taxClass = taxClass;
     }
 
     protected Long id;
@@ -65,5 +66,9 @@ public abstract class EmployeeDto {
         return id;
     }
 
+    protected String taxClass;
 
+    public String getTaxClass() {
+        return taxClass;
+    }
 }

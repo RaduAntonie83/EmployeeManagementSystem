@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Objects;
 
 @ServletSecurity(value = @HttpConstraint(rolesAllowed = {"WRITE_EMPLOYEES"}))
 
@@ -22,6 +24,7 @@ public class AddEmployee extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse
             response) throws ServletException, IOException {
+        request.setAttribute("employeeGroups", new String[] {"READ_EMPLOYEES", "WRITE_EMPLOYEES"});
         request.getRequestDispatcher("/WEB-INF/pages/addEmployee.jsp").forward(request,response);
     }
 
@@ -39,11 +42,17 @@ public class AddEmployee extends HttpServlet {
         LocalDate dateOfBirth = LocalDate.parse(request.getParameter("dateofbirth"), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String email = request.getParameter("email");
         String bonus = request.getParameter("bonus");
-        Integer numberOfShares = Integer.parseInt(request.getParameter("numberOfShares"));
+        int numberOfShares = 0;
+        if(!Objects.equals(request.getParameter("numberOfShares"), ""))
+            numberOfShares = Integer.parseInt(request.getParameter("numberOfShares"));
         String taxClass = request.getParameter("taxClass");
         String bank = request.getParameter("bank");
         String account = request.getParameter("account");
-        employeeBean.createEmployee(employeeType, name, gender, dateOfBirth, address, salary, religion, password, email, workingHours, bonus, numberOfShares, taxClass, bank, account);
+        String[] employeeGroups = request.getParameterValues("employee_groups");
+        if (employeeGroups == null) {
+            employeeGroups = new String[0];
+        }
+        employeeBean.createEmployee(employeeType, name, gender, dateOfBirth, address, salary, religion, password, email, workingHours, bonus, numberOfShares, taxClass, bank, account, List.of(employeeGroups));
         response.sendRedirect(request.getContextPath() + "/Employees");
     }
 }

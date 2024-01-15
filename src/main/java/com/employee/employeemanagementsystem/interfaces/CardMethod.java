@@ -42,14 +42,18 @@ public class CardMethod implements PaymentMethod{
     public Long getId() {
         return id;
     }
-    @OneToMany
-    private List<Employee> employees;
 
-    public List<Employee> getEmployees() {
-        return employees;
+    @OneToOne
+    @JoinColumn(name = "employee_id")  // Assuming your foreign key column is named "employee_id"
+    private Employee employee;
+
+    // Getters and setters...
+
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 }

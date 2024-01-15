@@ -90,21 +90,37 @@
                                     <label for="gender" class="text-white">Gender</label>
                                     <select class="form-control" id="gender" name="gender" required>
                                         <option value="" selected disabled>Select</option>
-                                        <option value="male" ${employee.gender eq 'male' ? 'selected' : ''}>Male</option>
-                                        <option value="female" ${employee.gender eq 'female' ? 'selected' : ''}>Female</option>
-                                        <option value="other" ${employee.gender eq 'other' ? 'selected' : ''}>Other</option>
+                                        <option value="Male" ${employee.gender eq 'Male' ? 'selected' : ''}>Male</option>
+                                        <option value="Female" ${employee.gender eq 'Female' ? 'selected' : ''}>Female</option>
+                                        <option value="Other" ${employee.gender eq 'Other' ? 'selected' : ''}>Other</option>
                                     </select>
                                     <div class="invalid-feedback">
                                         Gender is required.
                                     </div>
                                 </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="taxClass" class="text-white">Tax Class</label>
+                                    <select class="form-control" id="taxClass" name="taxClass" required>
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="STANDARD" ${employee.taxClass eq 'STANDARD' ? 'selected' : ''}>Standard</option>
+                                        <option value="HIGH_INCOME" ${employee.taxClass eq 'HIGH_INCOME' ? 'selected' : ''}>High-Income</option>
+                                        <option value="EXPAT" ${employee.taxClass eq 'EXPAT' ? 'selected' : ''}>Expat</option>
+                                        <option value="MEDICAL" ${employee.taxClass eq 'MEDICAL' ? 'selected' : ''}>Medical</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Tax Class is required.
+                                    </div>
+                                        <label for="numberOfShares" class="text-white">Number of Shares</label>
+                                        <input type="number" class="form-control" id="numberOfShares" name="numberOfShares" placeholder=""
+                                               value="${fn:contains(employee.class, 'ExecutiveDto') ? employee.numberOfShares : ''}">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                         <hr class="my-4">
                         <input type="hidden" name="employee_id" value="${employee.id}" />
                         <div class="row text-center">
                             <div class="col-md-6 mb-3 mx-auto">
-                                <button type="submit" class="btn btn-primary">+ Add<i class="fas fa-plus"></i></button>
+                                <button type="submit" class="btn btn-primary">Update<i class="fas fa-plus"></i></button>
                             </div>
                         </div>
                     </div>

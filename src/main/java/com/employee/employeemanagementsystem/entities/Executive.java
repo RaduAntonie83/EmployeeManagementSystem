@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 public class Executive extends Employee{
     private int numberOfShares;
-    @OneToOne(mappedBy = "employee", cascade = CascadeType.PERSIST)
+    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
     private Bonus Bonus;
 
     public int getNumberOfShares() {

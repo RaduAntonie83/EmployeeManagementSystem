@@ -20,7 +20,7 @@
                         </c:if>
                     </li>
                 </ul>
-                <a class="navbar-brand mx-auto" href="">Employee Management</a>
+                <a class="navbar-brand mx-auto" href="${pageContext.request.contextPath}">Employee Management</a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <c:choose>
@@ -32,7 +32,6 @@
                             </c:otherwise>
                         </c:choose>
                     </li>
-
                 </ul>
             </div>
         </nav>

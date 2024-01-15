@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 public class Associate extends Employee{
 
-    @OneToOne(mappedBy = "employee", cascade = CascadeType.PERSIST)
+    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
     private Bonus bonus;
 
     public Bonus getBonus() {

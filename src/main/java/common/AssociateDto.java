@@ -9,8 +9,8 @@ public class AssociateDto extends EmployeeDto{
         return bonus;
     }
 
-    public AssociateDto(Long id, String name, String gender, LocalDate dateOfBirth, String address, Integer salary, String religion, int workingHours, String email, String bonus) {
-        super(id, name, gender, dateOfBirth, address, salary, religion, workingHours, email);
+    public AssociateDto(Long id, String name, String gender, LocalDate dateOfBirth, String address, Integer salary, String religion, int workingHours, String email, String taxClass, String bonus) {
+        super(id, name, gender, dateOfBirth, address, salary, religion, workingHours, email, taxClass);
         this.bonus = bonus;
     }
 }

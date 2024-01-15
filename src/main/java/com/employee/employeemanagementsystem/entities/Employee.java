@@ -136,7 +136,7 @@ public abstract class Employee {
         this.taxClass = taxClass;
     }
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.PERSIST)
     protected CardMethod paymentMethod;
 
     public CardMethod getPaymentMethod() {

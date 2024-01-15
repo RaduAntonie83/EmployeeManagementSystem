@@ -10,6 +10,8 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Objects;
 
 @ServletSecurity(value = @HttpConstraint(rolesAllowed = {"WRITE_EMPLOYEES"}))
 @WebServlet(name = "EditEmployee", value = "/EditEmployee")
@@ -22,6 +24,7 @@ public class EditEmployee extends HttpServlet {
         Long employeeId = Long.parseLong(request.getParameter("id"));
         EmployeeDto employee = employeeBean.findById(employeeId);
         request.setAttribute("employee", employee);
+        request.setAttribute("employeeGroups", new String[] {"READ_EMPLOYEES", "WRITE_EMPLOYEES"});
         request.getRequestDispatcher("/WEB-INF/pages/editEmployee.jsp").forward(request,response);
     }
 
@@ -29,7 +32,6 @@ public class EditEmployee extends HttpServlet {
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
         Long id = Long.parseLong(request.getParameter("employee_id"));
-        EmployeeDto employee = employeeBean.findById(id);
         String name = request.getParameter("name");
         String address = request.getParameter("address");
         int salary = Integer.parseInt(request.getParameter("salary"));
@@ -39,7 +41,11 @@ public class EditEmployee extends HttpServlet {
         String gender = request.getParameter("gender");
         LocalDate dateOfBirth = LocalDate.parse(request.getParameter("dateofbirth"), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String email = request.getParameter("email");
-        employeeBean.updateEmployee(id, name, gender, dateOfBirth, address, salary, religion, password, email, workingHours);
+        int numberOfShares = 0;
+        if(!Objects.equals(request.getParameter("numberOfShares"), ""))
+            numberOfShares = Integer.parseInt(request.getParameter("numberOfShares"));
+        String taxClass = request.getParameter("taxClass");
+        employeeBean.updateEmployee(id, name, gender, dateOfBirth, address, salary, religion, password, email, workingHours, numberOfShares, taxClass);
         response.sendRedirect(request.getContextPath() + "/Employees");
     }
 }

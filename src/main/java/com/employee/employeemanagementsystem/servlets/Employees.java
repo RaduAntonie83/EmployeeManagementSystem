@@ -15,7 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 @DeclareRoles({"READ_EMPLOYEES","WRITE_EMPLOYEES"})
 @ServletSecurity(value = @HttpConstraint(rolesAllowed = {"READ_EMPLOYEES"}),
-        httpMethodConstraints = {@HttpMethodConstraint(value = "POST",rolesAllowed = {"WRITE_EMPLOYEES"})})
+        httpMethodConstraints = {@HttpMethodConstraint(value = "POST", rolesAllowed =
+                {"WRITE_EMPLOYEES"})})
 @WebServlet(name = "Employees", value = "/Employees")
 public class Employees extends HttpServlet {
     @Inject
