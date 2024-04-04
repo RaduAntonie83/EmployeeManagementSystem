@@ -1,0 +1,1 @@
+A Java website created by a team of five people for managing the employees of a company. It uses an SQL database in order to store all of the data for the employees, aswell as having a basic payment system.
